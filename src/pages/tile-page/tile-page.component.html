@@ -1,0 +1,38 @@
+<div class="container full-width">
+    <div class="image-container">
+        <img
+            src="https://i.imgur.com/egtSihP.jpeg"
+            alt="Card image"
+            class="image"
+        />
+    </div>
+    <div class="info-container">
+        <div class="info">
+            <h3>Industrial Керамогранит Коричневый 600х1200х8.5</h3>
+            <div class="slider">
+                <div class="image" [appImageSlider]="images"></div>
+            </div>
+            <div class="price">
+                <span>1 955 ₽/шт</span>
+                <app-add-in-cart></app-add-in-cart>
+            </div>
+            <div class="detail-info">
+                <!-- <div class="divider"></div> -->
+                <app-accordion title="Характеристики" class="detail-block">
+                    <div class="properties">
+                        @for (property of properties; track property.name;) {
+                        <app-property
+                            [propertyName]="property.name"
+                            [propertyValue]="property.value"
+                        ></app-property>
+                        }
+                    </div>
+                </app-accordion>
+                <!-- <div class="divider"></div> -->
+                <app-accordion title="Доставка" class="detail-block">
+                    Информация о доставке
+                </app-accordion>
+            </div>
+        </div>
+    </div>
+</div>

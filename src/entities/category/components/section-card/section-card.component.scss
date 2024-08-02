@@ -1,0 +1,39 @@
+@use "mixins" as *;
+
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    @include media(small) {
+        width: 80%;
+        min-width: 16.25rem;
+    }
+}
+
+.image {
+    object-fit: cover;
+}
+
+.content {
+    background-color: var(--secondary-color);
+    padding: 3.125rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-grow: 1;
+
+    .text {
+        font-family: var(--font-secondary);
+        text-align: center;
+        @include font-weight(regular);
+    }
+
+    .underline {
+        width: 7.75rem;
+        height: 0.375rem;
+    }
+}

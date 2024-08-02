@@ -1,0 +1,7 @@
+<img class="image" [src]="imageUrl" alt="Banner image" />
+<div class="content" *ngIf="text || buttonText">
+    <h1 class="text">{{ text }}</h1>
+    <button *ngIf="buttonText && buttonUrl" class="btn">
+        {{ buttonText }}
+    </button>
+</div>

@@ -1,0 +1,48 @@
+@use "mixins" as *;
+
+:host {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.image {
+    width: 100%;
+    aspect-ratio: 12 / 5;
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    position: absolute;
+    top: 30%;
+    left: 6%;
+    color: var(--primary-color);
+    width: 100%;
+
+    .text {
+        width: 60%;
+        @include font-weight(heavy);
+    }
+
+    .btn {
+        color: var(--accent-1);
+        background-color: var(--primary-color);
+        border-radius: 47px;
+        padding: 25px 100px;
+        @include font-weight(regular);
+        font-size: clamp(1.125rem, 1.075rem + 0.25vw, 1.375rem);
+        margin-top: 1.5rem;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--primary-color);
+            background-color: var(--accent-1);
+        }
+    }
+
+    @include media(medium) {
+        position: static;
+        padding-top: 2.5rem;
+    }
+}

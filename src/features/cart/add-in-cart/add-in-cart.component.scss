@@ -1,0 +1,39 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    padding: 1.25rem 1.375rem;
+    border: 1px solid var(--primary-color);
+    font-size: clamp(1rem, 0.975rem + 0.13vw, 1.125rem);
+    position: relative;
+    overflow: hidden;
+    transition: color 0.4s;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400%;
+        height: 100%;
+        background: repeating-linear-gradient(
+            to right,
+            var(--accent-1) 0 25%,
+            var(--accent-2) 25% 50%,
+            var(--accent-3) 50% 75%,
+            var(--accent-4) 75% 100%
+        );
+        transition: transform 1s;
+        transform: translateX(-100%);
+        z-index: 0;
+    }
+
+    &:hover::before {
+        transform: translateX(0);
+    }
+
+    & span {
+        position: relative;
+        z-index: 1;
+    }
+}

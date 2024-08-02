@@ -1,0 +1,69 @@
+@use "mixins" as *;
+
+.container {
+    display: flex;
+}
+
+.image-container {
+    position: relative;
+    flex: 1;
+}
+
+.image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: sticky;
+    top: 0px;
+}
+
+.info-container {
+    flex: 1;
+    background-color: var(--secondary-color);
+    display: grid;
+    justify-items: center;
+
+    .info {
+        padding: 3.75rem 0;
+        max-width: 30rem;
+
+        .slider {
+            padding-top: 1.25rem;
+            .image {
+                height: 30rem;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+
+        .price {
+            font-size: clamp(1rem, 0.925rem + 0.38vw, 1.375rem);
+            @include font-weight(semibold);
+            padding-top: 1.875rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .detail-info {
+            padding-top: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.875rem;
+
+            &:before,
+            .detail-block:after {
+                content: "";
+                height: 2px;
+                background-color: var(--sub-secondary-color);
+            }
+
+            .properties {
+                display: flex;
+                flex-direction: column;
+                gap: 0.625rem;
+            }
+        }
+    }
+}

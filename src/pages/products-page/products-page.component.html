@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="grid-container">
+        <div class="preview">
+            <app-section-card
+                imageUrl="https://i.imgur.com/HkzOReT.jpeg"
+                title="Loft"
+                imageSize="38.125rem"
+            ></app-section-card>
+        </div>
+        @if (products$ | async ; as products) { @for (product of products; track
+        product.id; let i = $index) {
+        <a class="item" [routerLink]="[product.slug]">
+            <app-product-card
+                [images]="product.images"
+                [title]="product.name"
+            ></app-product-card>
+        </a>
+        } }
+    </div>
+
+    <div class="filters">
+        <app-accordion title="Азазаза" class="filter">
+            <p>aps[dp[sapd[</p>
+        </app-accordion>
+
+        <app-accordion title="Азазаза" class="filter">
+            <p>aps[dp[sapd[</p>
+        </app-accordion>
+    </div>
+</div>

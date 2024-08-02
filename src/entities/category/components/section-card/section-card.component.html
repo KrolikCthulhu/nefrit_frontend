@@ -1,0 +1,15 @@
+@if (imageUrl) {
+<img
+    [src]="imageUrl"
+    alt="Card image"
+    class="image"
+    [style.height]="imageSize"
+/>
+}
+<div class="content">
+    <h3 class="text">{{ title }}</h3>
+    <div
+        class="underline"
+        [ngStyle]="{ 'background-color': underlineColor }"
+    ></div>
+</div>

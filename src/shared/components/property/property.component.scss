@@ -1,0 +1,19 @@
+:host {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: flex-end;
+}
+
+.name,
+.value {
+    font-size: clamp(0.875rem, 0.825rem + 0.25vw, 1.125rem);
+}
+
+.name {
+    color: var(--sub-primary-color);
+}
+
+.line {
+    border-bottom: 1px dashed var(--sub-primary-color);
+    min-width: 1.875rem;
+}

@@ -1,0 +1,9 @@
+<div class="header" (click)="toggle()">
+    <h4>{{ title }}</h4>
+    <div class="plus-minus" [ngClass]="isOpen ? 'active' : ''"></div>
+</div>
+@if (isOpen) {
+<div class="content" [ngClass]="isOpen ? 'active' : 'not-active'">
+    <ng-content></ng-content>
+</div>
+}
